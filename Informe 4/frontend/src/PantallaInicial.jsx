@@ -10,6 +10,8 @@ function PantallaInicial() {
   const [usuario, setUsuario] = useState(null)
   const [filtro, setFiltro] = useState('')
   const [valorBusqueda, setValorBusqueda] = useState('')
+  const [registroBusqueda, setRegistroBusqueda] = useState('')
+  const [errorRegistro, setErrorRegistro] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -80,6 +82,20 @@ function PantallaInicial() {
     setPublicaciones(todasPublicaciones)
   }
 
+  const buscarUsuario = async () => {
+    if (!registroBusqueda.trim()) {
+      setErrorRegistro('Ingrese un registro académico para buscar')
+      return
+    }
+    try {
+      const response = await axios.get(`${API_URL}/usuarios/registro/${registroBusqueda}`)
+      navigate(`/perfil/${response.data.registro_academico}`)
+    } catch (error) {
+      console.error('Error al buscar usuario:', error)
+      setErrorRegistro('Usuario no encontrado')
+    }
+  }
+
   return (
     <div className="pantalla-inicial">
       <header className="header">
@@ -94,6 +110,21 @@ function PantallaInicial() {
           </ul>
         </nav>
       </header>
+
+      {/* Buscador de usuario */}
+      <div className="buscador-perfil">
+        <input
+          type="text"
+          placeholder="Buscar usuario por registro académico"
+          value={registroBusqueda}
+          onChange={(e) => {
+            setRegistroBusqueda(e.target.value)
+            setErrorRegistro('')
+          }}
+        />
+        <button onClick={buscarUsuario} className="btn-aplicar">Buscar</button>
+        {errorRegistro && <p className="error-busqueda">{errorRegistro}</p>}
+      </div>
 
       {/* Barra de filtros */}
       <div className="buscador-perfil">
