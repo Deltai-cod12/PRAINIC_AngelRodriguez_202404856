@@ -1,0 +1,77 @@
+.perfil-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.perfil-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.perfil-form label {
+  font-weight: bold;
+  color: #555;
+}
+
+.perfil-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.perfil-form input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.perfil-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-regresar, .btn-guardar {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-regresar {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-regresar:hover {
+  background: #5a6268;
+}
+
+.btn-guardar {
+  background: #28a745;
+  color: white;
+}
+
+.btn-guardar:hover {
+  background: #218838;
+}
+
+.perfil-cargando {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #666;
+}

@@ -1,0 +1,121 @@
+/* Reset básico para este componente */
+.comentarios-page * {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.comentarios-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+.header-comentarios {
+  width: 100%;
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.header-comentarios h2 {
+  font-size: 1.5rem;
+}
+
+.boton-regresar {
+  padding: 8px 16px;
+  background-color: white;
+  color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.boton-regresar:hover {
+  background-color: #357ab8;
+  color: white;
+}
+
+/* Contenido */
+.contenido-comentarios {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Tarjetas de comentarios */
+.comentario-card {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.comentario-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.mensaje {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Formulario */
+.form-comentario {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.form-comentario textarea {
+  resize: vertical;
+  min-height: 60px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.form-comentario button {
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-comentario button:hover {
+  background-color: #357ab8;
+}
+
+/* Mensajes */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.exito {
+  color: green;
+  margin-bottom: 10px;
+}
